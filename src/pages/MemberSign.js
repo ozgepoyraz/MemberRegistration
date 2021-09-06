@@ -10,8 +10,8 @@ const MemberSign = ({navigation}) => {
   const [userPassword, setUserPassword] = useState(null);
 
   function handleSubmit() {
-    if(!userName || !userLastName || !userEmail || !userPassword){
-      Alert.alert('Uyarı!' , 'Lütfen boş bırakmayınız.')
+    if (!userName || !userLastName || !userEmail || !userPassword) {
+      Alert.alert('Uyarı!', 'Lütfen boş bırakmayınız.');
       return;
     }
 
@@ -22,7 +22,7 @@ const MemberSign = ({navigation}) => {
       userPassword,
     };
 
-    navigation.navigate('MemberResultScreen',{user})
+    navigation.navigate('MemberResultScreen', {user});
   }
 
   return (
@@ -30,19 +30,23 @@ const MemberSign = ({navigation}) => {
       <Input
         label="Ad:"
         placeholder="Adınızı giriniz."
-        onChangeText={setUserName}></Input>
+        onChangeText={setUserName}
+        secureTextEntry={false}></Input>
       <Input
         label="Soyad:"
         placeholder="Soyadınızı giriniz."
-        onChangeText={setUserLastName}></Input>
+        onChangeText={setUserLastName}
+        secureTextEntry={false}></Input>
       <Input
         label="E-mail:"
         placeholder="E-mail adreasinizi giriniz."
-        onChangeText={setUserEmail}></Input>
+        onChangeText={setUserEmail}
+        secureTextEntry={false}></Input>
       <Input
         label="Şifre:"
         placeholder="Şifre giriniz."
-        onChangeText={setUserPassword}></Input>
+        onChangeText={setUserPassword}
+        secureTextEntry={true}></Input>
       <Button title="Kaydı Tamamla" onPress={handleSubmit}></Button>
     </SafeAreaView>
   );
