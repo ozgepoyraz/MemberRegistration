@@ -5,7 +5,7 @@ import {SafeAreaView, StyleSheet} from 'react-native';
 const MemberResult = ({route}) => {
   const {user} = route.params;
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView>
       <Text style={styles.title}>Üye Bilgileri</Text>
       <Text style={styles.text}> Adı: {user.userName}</Text>
       <Text style={styles.text}> Soyadı: {user.userLastName}</Text>
@@ -15,7 +15,6 @@ const MemberResult = ({route}) => {
 };
 
 const styles = StyleSheet.create({
-  container: {},
   title: {
     fontSize: 25,
     fontWeight: 'bold',
